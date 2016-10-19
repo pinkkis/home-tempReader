@@ -1,0 +1,17 @@
+{
+  "name": "tempReader",
+  "version": "0.2.0",
+  "description": "temperature node for home monitoring",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+	"start" : "node index.js"
+  },
+  "keywords": [],
+  "author": "@pinkkis",
+  "license": "MIT",
+  "dependencies": {
+    "ds18b20-raspi": "^0.2.4",
+    "mqtt": "^2.0.1"
+  }
+}
