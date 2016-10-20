@@ -27,6 +27,8 @@ client.on('connect', () => {
 	client.subscribe(['partyline', 'commands', 'home']);
 
 	client.publish('partyline', JSON.stringify({ hostname: hostname, service: 'tempReader', message: 'started' }));
+
+	sendTemps();
 });
 
 client.on('message', (topic, message) => {
