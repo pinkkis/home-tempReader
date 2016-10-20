@@ -1,13 +1,18 @@
 {
-  "name": "tempReader",
+  "name": "home-tempreader",
   "version": "0.2.0",
   "description": "temperature node for home monitoring",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pinkkis/home-tempReader"
+  },
+  "readme": "https://github.com/pinkkis/home-tempReader/blob/master/README.md",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
 	"start" : "node index.js"
   },
-  "keywords": [],
+  "keywords": ["ds18b20", "raspberry pi", "temperature"],
   "author": "@pinkkis",
   "license": "MIT",
   "dependencies": {
