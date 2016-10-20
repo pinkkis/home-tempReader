@@ -3,7 +3,7 @@ const mqtt = require('mqtt');
 const os = require("os");
 
 const hostname = os.hostname();
-const mqttUrl = 'mqtt://hemlock.local';
+const mqttUrl = 'mqtt://192.168.192.150';
 
 let tempTimer = null;
 
@@ -28,7 +28,7 @@ client.on('connect', () => {
 });
 
 client.on('close', () => stopTemps() );
-client.on('offline', () => stopTemps() );
+//client.on('offline', () => stopTemps() );
 
 function sendTemps() {
 	sensor.readAllC( (err, temps) => {
@@ -36,7 +36,7 @@ function sendTemps() {
 			console.error(err);
 			client.publish('errors', err);
 		} else {
-            temps = temps.map( t => {
+		    temps = temps.map( t => {
                 t.timestamp = Date.now();
                 t.hostname = hostname;
                 return t;    
@@ -50,7 +50,7 @@ function sendTemps() {
 
 function stopTemps() {
 	console.log('stopping temp timer');
-    clearInterval(tempTimer);
+	clearInterval(tempTimer);
 }
 
 process.on('exit', () => {
